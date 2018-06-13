@@ -7,7 +7,7 @@ import { Grid, Row, Col } from 'react-bootstrap/lib';
 
 class MovieRow extends React.Component {
   viewMovie() {
-    const url = "https://www.themoviedb.org/movie/" + this.props.movie.id;
+    const url = "/movie/" + this.props.movie.id;
     window.location.href = url;
   }
 

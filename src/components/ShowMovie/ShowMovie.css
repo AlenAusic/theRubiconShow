@@ -1,0 +1,63 @@
+.App {
+    text-align: center;
+    margin: auto;
+  }
+  
+  .titleBar {
+    background-color: #404040;
+    display: block;
+    color: #fff;
+    padding-left: 16px;
+  }
+  
+  
+  Button {
+    margin-left: 20px;
+    display: inline-block;
+  }
+  
+  .buttonStyle {
+    width: 800px;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  
+  .mailme{
+    background-color: #404040;
+    border: 1px #505050 solid;
+    color: #404040;
+    float: right;
+  }
+
+  .nav {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  
+  table {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 10px;
+  }
+  
+  @media only screen and (max-width: 910px) {
+    span, .titleBar, table {
+      display: none;
+    }
+  
+    .Sorry {
+      margin-top: 50%;
+      margin-bottom: 50%;
+      display: block;
+    }
+  }
+  
+  @media (min-width: 910px) {
+    .Sorry {
+      display: none;
+    }
+  }
+  
+  

@@ -5,6 +5,7 @@ import './App.css';
 /* ---------- [ COMPONENTS ] ----------- */
 import MovieRow from './components/MovieRow/MovieRow';
 import Error from './components/Error/Error';
+import ShowMovie from './components/ShowMovie/ShowMovie';
 /* ---------- [ LIBRARIES ] ----------- */
 import $ from 'jquery';
 import Button from 'react-bootstrap/lib/Button';
@@ -23,6 +24,7 @@ class App extends Component {
 
     this.onClick = this.onClick.bind(this);
 
+
     this.performSearch("avengers");
   }
 
@@ -30,26 +32,29 @@ class App extends Component {
   performSearch(searchTerm) {
 
     let urlString = "https://api.themoviedb.org/3/search/" + this.state.stateOfUrl + "?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm;
-    // let urlPopular = "https://api.themoviedb.org/3/" + stateOfUrl + "/popular?api_key=1b5adf76a72a13bad99b8fc0c68cb085";
+    /* let urlPopular = "https://api.themoviedb.org/3/" + this.state.stateOfUrl + "/popular?api_key=1b5adf76a72a13bad99b8fc0c68cb085";
+     */
+    
     $.ajax({
       url: urlString,
       // SUCCESS
       success: (searchResults) => {
         console.log("Fetched data successfully");
-
+        
         const results = searchResults.results;
 
         var movieRows = [];
 
         results.forEach((movie) => {
+
           if (movie.poster_path !== null) {
             movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
             
-          const movieRow = <MovieRow key={movie.id} movie={movie}/>;
+            const movieRow = <MovieRow key={movie.id} movie={movie}/>;
           
-          movieRows.push(movieRow);   
+            movieRows.push(movieRow);   
           }
-       
+          
         })
 
         if (searchTerm.length >= 3) {
@@ -147,7 +152,14 @@ class App extends Component {
             }
           }/>
 
-          <Route path="/movie" strict component={App} />
+          <Route path="/movie/" strict component={ShowMovie} />
+
+          {/* <Route path="/movie/" render={
+            ()=><ShowMovie render={data => (
+                  <h1>Hello {this.movie.id}</h1>
+                )}/>
+            }
+          /> */}
 
           <Route component={Error} />
           
