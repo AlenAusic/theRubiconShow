@@ -1,0 +1,40 @@
+table {
+    margin: auto;
+    width: 70%;
+    border: 1px #404040 solid;
+}
+
+.container {
+    text-align: center;
+    width: 35%;
+    height: 420px;
+    display: inline-block;
+    border: 1px #404040 ridge;
+}
+
+
+.movie {
+    display: inline-block;
+    padding: 20px 40px 10px 40px;
+    /* border: 2px #757575 solid; */
+    width: 100%;
+}
+
+.movieHolder {
+    display: block;
+    width: 300px;
+}
+
+.poster {
+    display: inline-block;
+}
+
+
+span {
+    width: 35%;
+}
+
+h3 {
+    font-size: 16px;
+    display: inline;
+}
