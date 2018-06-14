@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import movie from '../MovieRow/MovieRow';
 import axios from 'axios';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 
 
@@ -22,16 +22,7 @@ class ShowMovie extends React.Component {
         this.onClick = this.onClick.bind(this);
 
 
-        // ---------------------- jQuery AJAX ------------------
-
-        /* $.ajax({
-            url: "https://api.themoviedb.org/3/movie/" + this.movieID + "/videos?api_key=1b5adf76a72a13bad99b8fc0c68cb085",
-            
-            success: (res) => {
-                const res = results;
-                console.log(res);
-            },
-        }); */
+        // ---------------------- jQuery AJAX -------------------
 
 
         // Somehow I couldn't concatenate url for API call even though I tried using axios, which works

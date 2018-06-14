@@ -32,15 +32,15 @@ class App extends Component {
   performSearch(searchTerm) {
 
     let urlString = "https://api.themoviedb.org/3/search/" + this.state.stateOfUrl + "?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm;
-    /* let urlPopular = "https://api.themoviedb.org/3/" + this.state.stateOfUrl + "/popular?api_key=1b5adf76a72a13bad99b8fc0c68cb085";
-     */
+    // let urlPopular = "https://api.themoviedb.org/3/" + this.state.stateOfUrl + "/popular?api_key=1b5adf76a72a13bad99b8fc0c68cb085&language=en-US&page=1&include_adult=false";
+    
     
     $.ajax({
       url: urlString,
       // SUCCESS
       success: (searchResults) => {
         console.log("Fetched data successfully");
-        
+
         const results = searchResults.results;
 
         var movieRows = [];
@@ -59,7 +59,21 @@ class App extends Component {
 
         if (searchTerm.length >= 3) {
           this.setState({rows: movieRows});
-        }
+        } 
+        
+        /* if (searchTerm === "avengers") {
+          $.ajax({
+            url: "https://api.themoviedb.org/3/search/" + this.state.stateOfUrl + "?api_key=1b5adf76a72a13bad99b8fc0c68cb085&language=en-US&page=1&include_adult=false",
+            
+            success: (res) => {
+                console.log(res);
+                this.setState({stateOfUrl: this.url});
+                
+          },
+        });   */
+        
+
+        
       },
       // ERROR
       error: (xhr, status, err) => {
