@@ -10,7 +10,6 @@ import ShowMovie from './components/ShowMovie/ShowMovie';
 import $ from 'jquery';
 import Button from 'react-bootstrap/lib/Button';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 
 
 
@@ -61,17 +60,6 @@ class App extends Component {
         if (searchTerm.length >= 3) {
           this.setState({rows: movieRows});
         } 
-        
-        /* if (searchTerm === "avengers") {
-          $.ajax({
-            url: "https://api.themoviedb.org/3/search/" + this.state.stateOfUrl + "?api_key=1b5adf76a72a13bad99b8fc0c68cb085&language=en-US&page=1&include_adult=false",
-            
-            success: (res) => {
-                console.log(res);
-                this.setState({stateOfUrl: this.url});
-                
-          },
-        });   */
         
 
         
