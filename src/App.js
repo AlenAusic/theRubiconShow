@@ -10,6 +10,7 @@ import ShowMovie from './components/ShowMovie/ShowMovie';
 import $ from 'jquery';
 import Button from 'react-bootstrap/lib/Button';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 
 
 
@@ -17,7 +18,7 @@ class App extends Component {
   // CONSTRUCTOR
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       stateOfUrl: "movie"
     };
 
@@ -166,14 +167,9 @@ class App extends Component {
             }
           }/>
 
-          <Route path="/movie/" strict component={ShowMovie} />
+          <Route path="/movie/" render={()=><ShowMovie tekst={this.state.props}/>}/>
 
-          {/* <Route path="/movie/" render={
-            ()=><ShowMovie render={data => (
-                  <h1>Hello {this.movie.id}</h1>
-                )}/>
-            }
-          /> */}
+          
 
           <Route component={Error} />
           

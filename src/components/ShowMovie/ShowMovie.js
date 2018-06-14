@@ -4,7 +4,7 @@ import './ShowMovie.css';
 import Button from 'react-bootstrap/lib/Button';
 import { NavLink } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import movie from '../MovieRow/MovieRow';
+import text from '../../App';
 import axios from 'axios';
 // import $ from 'jquery';
 
@@ -15,13 +15,13 @@ class ShowMovie extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movieID: movie.id,
+            text: text,
             youtubeKey: null
         };
 
         this.onClick = this.onClick.bind(this);
 
-
+        console.log(this.movieID)
         // ---------------------- jQuery AJAX -------------------
 
 

@@ -2,7 +2,7 @@
 
 Frontend application using [The Movie Database API](https://developers.themoviedb.org). Built with React.
 
-[Try it out here.](https://boiling-caverns-71539.herokuapp.com/) (It might take a while to load as Heroku free tier goes to sleep after 30mins of inactivity)
+[Try it out here.](https://therubiconshow.herokuapp.com) (It might take a while to load as Heroku free tier goes to sleep after 30mins of inactivity)
 
 
 Some of the stuff used:
@@ -12,6 +12,10 @@ Some of the stuff used:
 * CSS modules 
 * jQuery
 * React-Bootstrap
+* react-router-with-props
+* axios
+
+
 
 ## Getting started
 
